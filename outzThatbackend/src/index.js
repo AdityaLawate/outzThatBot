@@ -1,5 +1,5 @@
 require('dotenv').config()
-const { Client, IntentsBitField } = require('discord.js')
+const { Client, IntentsBitField, EmbedBuilder } = require('discord.js')
 
 const client = new Client(
     {
@@ -11,6 +11,7 @@ const client = new Client(
         ]
     }
 )
+client.login(process.env.TOKEN);
 client.on('ready',
     (c) => {
         console.log(`✅ ${c.user.username}Bot is up!!!!`)
@@ -34,7 +35,7 @@ client.on('interactionCreate',
         if (!interaction.isChatInputCommand()) return;
         switch (interaction.commandName) {
             case 'hey':
-                interaction.reply('Hi!')
+                interaction.reply('Hi! ' + interaction.member.displayName)
                 break;
             case 'ping':
                 interaction.reply('Pong 🎾')
@@ -52,11 +53,12 @@ client.on('interactionCreate',
                 // interaction.
                 interaction.reply(`${num1}+${num2}=${sum}`)
                 break;
+            case 'embed':
+                const embed = new EmbedBuilder().setTitle("Embeds Title").setColor("Random").setDescription("This is an Embed")
+                interaction.reply({ embeds: [embed] })
+                break;
+
             default:
                 break;
         }
     })
-
-client.login(process.env.TOKEN)
-
-

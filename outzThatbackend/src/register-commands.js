@@ -42,6 +42,10 @@ const commands = [
     {
         name: 'ping',
         description: 'pong'
+    },
+    {
+        name: 'embed',
+        description: 'sends an Embed!'
     }
 
 ];
