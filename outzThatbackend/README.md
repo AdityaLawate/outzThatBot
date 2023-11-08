@@ -15,6 +15,6 @@ Yet to implement:
 - Cricket live scores
 
 --- 
-<center>
+<p align="center">
 Made with 💗 by <a href = "https://linkedin.com/in/aditya-lawate">Aditya Lawate </a>
-</center>
+</p>
