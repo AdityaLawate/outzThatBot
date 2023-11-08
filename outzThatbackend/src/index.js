@@ -32,9 +32,6 @@ client.on('messageCreate',
 client.on('interactionCreate',
     (interaction) => {
         if (!interaction.isChatInputCommand()) return;
-        // if (interaction.commandName==='hey'){
-        //     interaction.reply('Hello')
-        // }
         switch (interaction.commandName) {
             case 'hey':
                 interaction.reply('Hi!')
