@@ -1,18 +1,41 @@
 require('dotenv').config();
-const { REST, Routes } = require('discord.js');
+const { REST, Routes, ApplicationCommandOptionType } = require('discord.js');
 const commands = [
     {
-        name: 'hey',
-        description: 'Replies to hey!',
+        name: 'add',
+        description: 'adds 2 nums!',
+        options: [
+            {
+                name: 'a-number',
+                description: 'First no. to add',
+                type: ApplicationCommandOptionType.Number,
+                required: true,
+                choices:
+                [
+                    {
+                        name: 'one',
+                        value: 1,
+                    },
+                    {
+                        name: 'two',
+                        value: 2,
+                    },
+                    {
+                        name: 'three',
+                        value: 3,
+                    },
+                ]
+            },
+            {
+                name: 'another-number',
+                description: 'Second no. to add',
+                type: ApplicationCommandOptionType.Number,
+                required: true,
+            }
+        ],
+     
     },
-    {
-        name: 'ping',
-        description: 'Pong!',
-    },
-    {
-        name: 'out',
-        description: 'OutsThat!',
-    },
+
 ];
 
 const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
@@ -23,6 +46,7 @@ const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
         await rest.put(
             Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID)
             , { body: commands })
+        console.log('commands registered.....')
     } catch (error) {
         console.log(`There was an ${error}  `);
 
