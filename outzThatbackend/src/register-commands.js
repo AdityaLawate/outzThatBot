@@ -11,20 +11,20 @@ const commands = [
                 type: ApplicationCommandOptionType.Number,
                 required: true,
                 choices:
-                [
-                    {
-                        name: 'one',
-                        value: 1,
-                    },
-                    {
-                        name: 'two',
-                        value: 2,
-                    },
-                    {
-                        name: 'three',
-                        value: 3,
-                    },
-                ]
+                    [
+                        {
+                            name: 'one',
+                            value: 1,
+                        },
+                        {
+                            name: 'two',
+                            value: 2,
+                        },
+                        {
+                            name: 'three',
+                            value: 3,
+                        },
+                    ]
             },
             {
                 name: 'another-number',
@@ -33,8 +33,16 @@ const commands = [
                 required: true,
             }
         ],
-     
+
+    }, 
+    {
+        name: 'hey',
+        description: 'Hey Hi!'
     },
+    {
+        name: 'ping',
+        description: 'pong'
+    }
 
 ];
 
