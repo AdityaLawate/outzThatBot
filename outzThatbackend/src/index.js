@@ -28,6 +28,29 @@ client.on('messageCreate',
         }
     }
 )
+
+client.on('interactionCreate',
+    (interaction) => {
+        if (!interaction.isChatInputCommand()) return;
+        // if (interaction.commandName==='hey'){
+        //     interaction.reply('Hello')
+        // }
+        switch (interaction.commandName) {
+            case 'hey':
+                interaction.reply('Hi!')
+                break;
+            case 'ping':
+                interaction.reply('Pong 🎾')
+                break;
+            case 'out':
+                interaction.reply('🏏 OutsThat!!')
+                break;
+            default:
+                break;
+        }
+    }
+)
+
 client.login(process.env.TOKEN)
 
 
