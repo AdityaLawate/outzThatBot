@@ -16,5 +16,5 @@ Yet to implement:
 
 --- 
 <center>
-Made with 💗 by [Aditya Lawate](https://linkedin.com/in/aditya-lawate)
+Made with 💗 by <a href = "https://linkedin.com/in/aditya-lawate">Aditya Lawate </a>
 </center>
